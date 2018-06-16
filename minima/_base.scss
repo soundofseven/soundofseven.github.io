@@ -1,0 +1,365 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.125em;
+}
+
+li, p {
+  font-weight: 300;
+}
+
+p {
+  line-height: 1.75;
+}
+
+/**
+ * Basic styling
+ */
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $gutter / 2;
+}
+
+
+/**
+ * `main` element
+ */
+main {
+  display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+}
+
+
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+
+ol, ul {
+  margin-top: $gutter;
+}
+
+ol {
+  margin-left: $gutter;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: $gutter/2;
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $base-font-weight;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+  transition: color 500ms;
+
+  &:visited {
+    color: $brand-color;
+  }
+
+  &:hover {
+    color: darken($brand-color, 15%);
+    text-decoration: none;
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: underline;
+    }
+  }
+}
+
+a.button {
+  padding: $gutter/2 ($gutter * 0.67);
+  background-color: $overlay-color-2;
+  color: $text-color;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 500ms;
+
+  &:hover {
+    cursor: pointer;
+    background-color: black;
+  }
+}
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+  color: $text-color;
+  border-left: 4px solid $text-color;
+  padding-left: $gutter / 2;
+  @include relative-font-size(1.125);
+  letter-spacing: -1px;
+  font-style: italic;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+  @include relative-font-size(0.9375);
+  border: 1px solid $text-color;
+  border-radius: 3px;
+  background-color: #eef;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+  max-width: -webkit-calc(#{$content-width} - (#{$gutter} * 2));
+  max-width:         calc(#{$content-width} - (#{$gutter} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter;
+  padding-left: $gutter;
+  @extend %clearfix;
+
+  @include media($screen-sm) {
+    padding: 0;
+  }
+}
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+/**
+ * Icons
+ */
+
+.svg-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    fill: #{$text-color};
+    padding-right: 5px;
+    vertical-align: text-top;
+}
+
+.social-media-list {
+  li + li {
+    padding-top: 5px;
+  }
+}
+
+
+
+/**
+ * Tables
+ */
+table {
+  margin-bottom: $gutter;
+  width: 100%;
+  text-align: $table-text-align;
+  color: lighten($text-color, 18%);
+  border-collapse: collapse;
+  border: 1px solid $text-color;
+  tr {
+    &:nth-child(even) {
+      background-color: lighten($text-color, 6%);
+    }
+  }
+  th, td {
+    padding: ($gutter / 3) ($gutter / 2);
+  }
+  th {
+    background-color: lighten($text-color, 3%);
+    border: 1px solid darken($text-color, 4%);
+    border-bottom-color: darken($text-color, 12%);
+  }
+  td {
+    border: 1px solid $text-color;
+  }
+}
+
+
+/** Box shadow **/
+
+.box-shadow {
+  position: relative; /* For positioning the pseudo-element */
+  box-shadow: 0px 2px 50px 5px rgba(0, 0, 0, 0.5);
+
+  &::before {
+    /* Position the pseudo-element. */
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* Create the box shadow at expanded size. */
+    box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.6);
+
+    /* Hidden by default. */
+    opacity: 0;
+    transition: opacity 700ms;
+  }
+
+  &:hover::before {
+    /* Show the pseudo-element on hover. */
+    opacity: 1;    
+  }
+}
+
+.box-shadow-hover-only {
+  position: relative; /* For positioning the pseudo-element */
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
+  &::before {
+    /* Position the pseudo-element. */
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* Create the box shadow at expanded size. */
+    box-shadow: 0 0 75px 5px rgba(255, 255, 255, 0.2);
+
+    /* Hidden by default. */
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+
+  &:hover::before {
+    /* Show the pseudo-element on hover. */
+    opacity: 1;    
+  }
+}
+
+.button-box-shadow {
+  position: relative; /* For positioning the pseudo-element */
+  box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.2);
+
+  &::before {
+    /* Position the pseudo-element. */
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    /* Create the box shadow at expanded size. */
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5);
+
+    /* Hidden by default. */
+    opacity: 0;
+    transition: opacity 500ms;
+  }
+
+  &:hover::before {
+    /* Show the pseudo-element on hover. */
+    opacity: 1;    
+  }
+}
+
+

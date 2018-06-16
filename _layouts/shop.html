@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="page-container">
+  <div class="main-panel">
+
+    <h1 class="section-title">{{ page.title }}</h1>
+
+
+    {%- for product in site.products -%}
+
+      <div class="shop-item-wrapper">
+
+        <div class="hidden-panel">
+        </div>
+
+        <div class="item-image-container hvr-grow">
+          <img src="../{{ product.image }}">
+        </div>
+
+        <div class="item-label-container">
+          <div class="item-label">
+            <h5 class="item-title">{{ product.name }}</h5>
+            <h1 class="item-price"><sup>$</sup>{{ product.price }}</h1>
+            <a class="button shop-button button-box-shadow">Coming Soon</a>
+          </div>
+        </div>
+
+      </div>
+
+    {%- endfor -%}
+
+  </div>
+</div>

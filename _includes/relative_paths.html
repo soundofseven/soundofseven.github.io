@@ -1,0 +1,19 @@
+<!-- From https://ricostacruz.com/til/relative-paths-in-jekyll -->
+
+<!-- _includes/base.html -->
+{% assign base = '' %}
+{% assign depth = page.url | split: '/' | size | minus: 1 %}
+{% if    depth <= 1 %}{% assign base = '..' %}
+{% elsif depth == 2 %}{% assign base = '..' %}
+{% elsif depth == 3 %}{% assign base = '../..' %}
+{% elsif depth == 4 %}{% assign base = '../../..' %}{% endif %}
+
+<!-- To use this, simply insert {{ base }} in the root position of any file paths
+	
+	Examples:
+	<link href='{{base}}/assets/style.css' rel='stylesheet'>
+	<a href='{{ base }}'>Back to home</a>
+	<a href='{{ base }}/about.html'>About me</a>
+	<a href='{{ base }}{{ post.url }}'>Read "{{ post.title }}"</a>
+
+	-->

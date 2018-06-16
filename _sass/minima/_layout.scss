@@ -1,0 +1,598 @@
+/**
+ * Site header
+ */
+.site-header {
+  min-height: $gutter * 1.865;
+  padding-top: $gutter * 1.5;
+  padding-bottom: $gutter * 3;
+
+  @include media($screen-md) {
+    padding-bottom: $gutter*2;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 0;
+    grid-auto-rows: minmax(auto, auto);
+    align-items: center;
+
+    @include media($screen-sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .nav-social {
+    @include media($screen-sm) {
+      display: none;
+    }      
+  }
+}
+
+.header-logo {
+  max-width: 160px;
+}
+
+.nav-links, .nav-social {
+  padding: $gutter/2 0;  
+}
+
+.nav-links {
+    @include media($screen-sm) {
+      text-align: center;
+    }
+}
+
+.nav-social {
+  text-align: right;
+
+  a {
+    color: $text-color;
+    padding: 0 5px;
+
+    &:hover {
+      color: $overlay-color;
+    }
+  }
+
+}
+
+.site-title {
+  @include relative-font-size(1.625);
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-right: $gutter/2;
+
+  @include media($screen-sm) {
+    margin-bottom: $gutter / 2;
+    display: block;
+    margin-right: 0;
+  }  
+}
+
+a.page-link {
+  padding: 0 ($gutter/2);
+  color: $text-color;
+  font-size: $small-font-size;
+  font-weight: 400;
+
+  &:hover {
+    color: $overlay-color;
+  }
+}
+
+/** BODY STYLING **/
+
+.section-title {
+  color: $brand-color;
+  font-weight: 400;
+}
+
+.main-panel {
+  background-color: $overlay-color;
+  padding: $gutter*2 $gutter*3;  
+  margin-bottom: $gutter * 4;
+
+  @include media($screen-md) {
+    padding: $gutter * 2;
+    margin-bottom: $gutter * 3;    
+  }
+
+  @include media($screen-sm) {
+    padding: $gutter*2 $gutter $gutter;
+  }
+}
+
+.main-panel-section {
+  padding: $gutter*2 0;
+
+  @include media($screen-sm) {
+    padding: $gutter*1.5 0;
+  }
+}
+
+.latest-release {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: $gutter*2;
+  grid-auto-rows: minmax(auto, auto);
+
+  @include media($screen-md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.album-art, .album-details {
+  display: grid;
+  align-items: center;  
+}
+
+.album-art {
+  justify-content: end;
+
+  @include media($screen-md) {
+    justify-content: center;
+  }   
+
+  img { 
+    width: 100%;
+    max-width: 320px;
+  }
+
+}
+
+.album-details {
+
+  @include media($screen-md) {
+    justify-content: center;
+  } 
+
+}
+
+.retailers {
+  padding-top: $gutter/3;
+
+  .retailer-logo {
+    max-width: 56px;
+    padding: 0 10px;
+    display: inline-block;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0; 
+    }
+
+    img {
+      border-radius: 4px;
+      border: 1px solid white;
+    }
+  }
+
+  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }  
+}
+
+.featured-tracks {
+
+}
+
+.featured-tracks-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $gutter * 1.5;
+  grid-auto-rows: minmax(auto, auto);
+  padding-top: $gutter * 0.5;
+
+  @include media($screen-lg) {
+    grid-template-columns: repeat(1, 1fr);
+  }    
+}
+
+.activity {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: $gutter;
+  grid-auto-rows: minmax(auto, auto); 
+
+  @include media($screen-sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }  
+}
+
+// Section: Featured merch
+
+.feature-merch {
+  padding: $gutter*4 $gutter*2 $gutter*6;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: $gutter;
+  grid-auto-rows: minmax(auto, auto); 
+
+  @include media($screen-lg) {
+    grid-template-columns: 2fr 1fr;
+    padding: $gutter*3 $gutter*2 $gutter*6;
+  }
+
+  @include media($screen-sm) {
+    grid-template-columns: repeat(1, 1fr);
+    padding: $gutter*2 $gutter $gutter*4;
+  }
+
+  @include media($screen-xs) {
+    padding-bottom: $gutter*2 $gutter $gutter*4;
+  }  
+}
+
+.hidden-panel {
+  @include media($screen-lg) {
+    display: none;
+  } 
+}
+
+.item-image-container, .item-label-container {
+  display: grid;
+  align-items: center;
+}
+
+.item-image-container {
+  text-align: center;
+}
+
+.item-label-container {
+  display: grid;
+  justify-content: start;
+
+  @include media($screen-sm) {
+    justify-content: center;
+  }
+}
+
+.item-label {
+  text-align: center;
+}
+
+  .item-price {
+    color: $brand-color;
+    font-weight: 400;
+    padding-bottom: $gutter/2;
+  }
+
+.shop-link {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: $gutter 0;
+
+  a {
+    color: $text-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: $brand-color;
+    }
+
+    @include media($screen-sm) {
+      font-size: 14px;
+    }
+  }  
+}
+
+/**
+ * Site footer
+ */
+.site-footer {
+  padding: $gutter 0;
+  background: $overlay-color;
+
+  .nav-social {
+    text-align: center;
+    display: none;
+
+    @include media($screen-sm) {
+      display: block;
+    }      
+
+    a {
+      color: $text-color;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }  
+}
+
+.site-footer.page-footer {
+
+  @include media($screen-sm) {
+    background: $background-color;
+
+    #mc_embed_signup {
+
+      .mailing-list-form input {
+        background-color: $text-color;
+        &:focus {
+          background-color: $overlay-color;
+          color: $text-color;
+        }
+      }
+
+      .mailing-list-submit input {
+        background-color: $overlay-color;
+        &:hover {
+          background-color: black;
+        }           
+      }
+
+    }
+
+  }
+
+}
+
+.contact-list,
+.social-media-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.copyright-text {
+  font-size: 11px;
+  color: $text-color-2;
+  padding: $gutter 0;
+  background: $overlay-color-2;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+#mc_embed_signup {
+
+  @include media($screen-sm) {
+    text-align: center;
+    margin: $gutter 0;
+  }   
+
+  p {
+    display: inline-block;
+    padding-right: 10px;
+
+    @include media($screen-sm) {
+      display: block;
+      padding-right: 0;
+    } 
+  }
+
+  .mailing-list-form {
+    display: inline-block;
+    width: 250px;
+
+    @include media($screen-sm) {
+      max-width: 100%;
+    } 
+
+    input {
+      background-color: black;
+      border: none;
+      padding: 10px;
+      color: $text-color-2;
+      font-family: $base-font-family;
+      font-size: 14px;      
+      letter-spacing: 0.125em;
+      transition: background-color 500ms;  
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        background-color: $text-color;
+        color: $overlay-color;
+      }     
+    }
+  }
+
+  .mailing-list-submit {
+    display: inline-block;
+  }
+
+  .mailing-list-submit input {
+    padding: 10px;
+    background-color: black;
+    color: $text-color;
+    font-family: $base-font-family;
+    letter-spacing: 0.125em;    
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 500ms;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $text-color-2;
+    }    
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+}
+
+/** Page elements **/
+
+.page-container {
+
+  .main-panel {
+    padding: $gutter * 4 ;
+    margin-bottom: $gutter * 6;
+
+  @include media($screen-lg) {
+    padding: $gutter * 3;
+  }
+
+  @include media($screen-md) {
+    padding: ($gutter * 3) ($gutter * 2);
+    margin-bottom: $gutter * 4;
+  }
+
+  @include media($screen-sm) {
+    padding: ($gutter * 3) ($gutter * 1.5);
+    margin-bottom: 0;
+  }
+
+  }
+
+  .section-title {
+    padding-bottom: $gutter * 1.5;
+
+    @include media($screen-sm) {
+      padding-bottom: $gutter * 0.5;
+    }  
+  }
+
+}
+
+.page-section-columns-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: $gutter * 2;
+  grid-auto-rows: minmax(auto, auto);
+  margin-bottom: $gutter * 2;
+
+  @include media($screen-lg) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0;
+  }
+
+}
+
+.page-section-image-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: $gutter * 2;
+  grid-auto-rows: minmax(auto, auto);
+  margin-bottom: $gutter * 4;  
+
+  @include media($screen-lg) {
+    grid-gap: $gutter;
+  }  
+
+  @include media($screen-sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media($screen-xs) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }    
+}
+
+
+
+
+/** Shop page **/
+
+.shop-item-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: $gutter;
+  grid-auto-rows: minmax(auto, auto);
+  padding: ($gutter * 2) 0;
+
+  @include media($screen-lg) {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  @include media($screen-sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }  
+}
+
+
+
+// BELOW IS THE CODE FOR THE ORIGINAL NAVBAR BUTTON
+// .site-nav {
+//   float: right;
+//   line-height: $base-line-height * $base-font-size * 2.25;
+
+//   .nav-trigger {
+//       display: none;
+//   }
+
+//   .menu-icon {
+//     display: none;
+//   }
+
+//   .page-link {
+//     color: $text-color;
+//     line-height: $base-line-height;
+
+//     // Gaps between nav items, but not on the last one
+//     &:not(:last-child) {
+//       margin-right: 20px;
+//     }
+//   }
+
+//   @include media-query($on-palm) {
+//     position: absolute;
+//     top: 9px;
+//     right: $gutter / 2;
+//     background-color: $background-color;
+//     border: 1px solid $grey-color-light;
+//     border-radius: 5px;
+//     text-align: right;
+
+//     label[for="nav-trigger"] {
+//       display: block;
+//       float: right;
+//       width: 36px;
+//       height: 36px;
+//       z-index: 2;
+//       cursor: pointer;
+//     }
+
+//     .menu-icon {
+//       display: block;
+//       float: right;
+//       width: 36px;
+//       height: 26px;
+//       line-height: 0;
+//       padding-top: 10px;
+//       text-align: center;
+
+//       > svg {
+//         fill: $grey-color-dark;
+//       }
+//     }
+
+//     input ~ .trigger {
+//       clear: both;
+//       display: none;
+//     }
+
+//     input:checked ~ .trigger {
+//       display: block;
+//       padding-bottom: 5px;
+//     }
+
+//     .page-link {
+//       display: block;
+//       padding: 5px 10px;
+
+//       &:not(:last-child) {
+//         margin-right: 0;
+//       }
+//       margin-left: 20px;
+//     }
+//   }
+// }

@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+// Define defaults for each variable.
+
+$base-font-family: 'Abel', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-size:   16px !default;
+$base-font-weight: 300 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$gutter:     30px !default;
+
+$text-color:       #dbdbda !default;
+$text-color-2:     #9f9f9e !default;
+$text-color-3:     #444343 !default;
+$text-color-hover: #bcbcba;
+
+$background-color: rgba(124,155,153,1) !default;
+$background-color-off: rgba(128,155,158,1);
+$overlay-color:    #383838 !default;
+$overlay-color-2:  #2b2b2a !default;
+
+$brand-color:      #f9b233 !default;
+
+$table-text-align: left !default;
+
+.brand-color {
+  color: $brand-color;
+}
+
+.text-color-2 {
+  color: $text-color-2;
+}
+
+.text-color-3 {
+  color: $text-color-3;
+}
+
+.weight-med {
+  font-weight: 400;
+}
+
+.weight-heavy {
+  font-weight: 600;
+}
+
+// Universal classes
+
+.no-padding {
+	padding: 0;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0;
+}
+
+.text-line-gap {
+  padding-bottom: $gutter/2;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+// Width of the content area
+$content-width:    1100px !default;
+
+$screen-lg: 1020px;
+$screen-md: 800px;
+$screen-sm: 600px;
+$screen-xs: 400px;
+
+// Use media queries like this:
+// @include media($on-palm) {
+//   .wrapper {
+//     padding-right: $gutter / 2;
+//     padding-left: $gutter / 2;
+//   }
+// }
+@mixin media($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+// Import partials.
+@import
+  "minima/base",
+  "minima/layout",
+  "minima/syntax-highlighting",
+  "minima/hover"
+;
